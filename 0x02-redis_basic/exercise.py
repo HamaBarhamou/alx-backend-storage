@@ -8,6 +8,7 @@ class Cache:
 
     def __init__(self):
         self._redis = redis.Redis()
+        self._redis.flushdb()
 
     def store(self, data):
         key = str(uuid.uuid1())
